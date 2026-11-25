@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 032
+      author: olena
+      changes:
+        - insert:
+            tableName: couples
+            columns:
+              - column: { name: name_couple, value: "34"}
+              - column: { name: participant_f_id, valueNumeric: 4}
+              - column: { name: participant_m_id, valueNumeric: 3 }
+        - insert:
+            tableName: couples
+            columns:
+              - column: { name: name_couple, value: "56" }
+              - column: { name: participant_f_id, valueNumeric: 6 }
+              - column: { name: participant_m_id, valueNumeric: 5 }
+        - insert:
+            tableName: couples
+            columns:
+              - column: { name: name_couple, value: "78" }
+              - column: { name: participant_f_id, valueNumeric: 8 }
+              - column: { name: participant_m_id, valueNumeric: 7 }

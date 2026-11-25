@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 013
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: judges
+      changes:
+        - createTable:
+            tableName: judges
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_judge
+                  type: VARCHAR(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_tournament_j
+                  type: DATE
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+              - column:
+                  name: comment
+                  type: VARCHAR(500)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+
+        - addForeignKeyConstraint:
+            baseTableName: judges
+            baseColumnNames: trainer_id
+            referencedTableName: trainers
+            referencedColumnNames: id
+            constraintName: fk_judges_trainers
+      rollback:
+        - delete:
+            tableName: judges

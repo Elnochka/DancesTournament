@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-participant-kind-of-dance
+      author: olena
+      changes:
+        - createTable:
+            tableName: participant_kind_of_dance
+            columns:
+              - column:
+                  name: participant_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: kind_of_dance_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+        - addPrimaryKey:
+            tableName: participant_kind_of_dance
+            columnNames: participant_id, kind_of_dance_id
+            constraintName: pk_participant_kind_of_dance
+
+        - addForeignKeyConstraint:
+            baseTableName: participant_kind_of_dance
+            baseColumnNames: participant_id
+            referencedTableName: participants
+            referencedColumnNames: id
+            constraintName: fk_pkd_participant
+
+        - addForeignKeyConstraint:
+            baseTableName: participant_kind_of_dance
+            baseColumnNames: kind_of_dance_id
+            referencedTableName: kind_of_dances
+            referencedColumnNames: id
+            constraintName: fk_pkd_kind_of_dance

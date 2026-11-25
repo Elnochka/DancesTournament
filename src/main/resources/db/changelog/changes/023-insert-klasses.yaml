@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 023
+      author: olena
+      changes:
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "E"}
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "D"}
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "C"}
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "B"}
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "A"}
+        - insert:
+            tableName: klasses
+            columns:
+              - column: {name: name_klass, value: "S"}

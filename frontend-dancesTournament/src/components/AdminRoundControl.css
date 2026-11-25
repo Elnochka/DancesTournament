@@ -1,0 +1,258 @@
+
+.round-control {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #dfe5e2;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(65, 80, 75, 0.06);
+}
+
+/* Поля вибору категорії, раунду та танцю */
+.round-control > label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #35413e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.round-control select {
+  box-sizing: border-box;
+  min-width: 190px;
+  padding: 9px 12px;
+  border: 1px solid #cfd8d4;
+  border-radius: 7px;
+  background: #fafbfa;
+  color: #35413e;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.round-control select:hover {
+  border-color: #aebdb7;
+}
+
+.round-control select:focus {
+  border-color: #91a9a1;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(145, 169, 161, 0.15);
+}
+
+.round-control > label:first-child select {
+  min-width: 260px;
+}
+
+/* Налаштування вибраного раунду */
+.round-settings {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  margin-top: 4px;
+  padding: 16px;
+  background: #f7f9f8;
+  border: 1px solid #e1e8e4;
+  border-radius: 8px;
+}
+
+.round-settings > div {
+  color: #46534e;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.round-settings > div strong {
+  color: #35413e;
+}
+
+/* Поле кількості учасників */
+.round-settings > label {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #35413e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.round-settings input[type='number'] {
+  box-sizing: border-box;
+  width: 90px;
+  padding: 9px 10px;
+  border: 1px solid #cfd8d4;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #35413e;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.round-settings input[type='number']:focus {
+  border-color: #91a9a1;
+  box-shadow: 0 0 0 3px rgba(145, 169, 161, 0.15);
+}
+
+/* Кнопка збереження */
+.round-settings button {
+  padding: 10px 16px;
+  border: 1px solid #78958a;
+  border-radius: 7px;
+  background: #78958a;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.round-settings button:hover:not(:disabled) {
+  border-color: #617e73;
+  background: #617e73;
+}
+
+.round-settings button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Завантаження та помилки */
+.round-control > p {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: 14px;
+}
+
+.round-settings-error {
+  padding: 10px 12px;
+  border: 1px solid #edcaca;
+  border-radius: 7px;
+  background: #fff5f5;
+  color: #a83232;
+  line-height: 1.5;
+}
+
+/* Навігація між танцями */
+.dance-navigation {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+  padding: 10px 14px;
+  background: #f7f9f8;
+  border: 1px solid #e1e8e4;
+  border-radius: 8px;
+}
+
+.dance-navigation span {
+  min-width: 70px;
+  color: #35413e;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.dance-navigation button {
+  padding: 9px 14px;
+  border: 1px solid #78958a;
+  border-radius: 7px;
+  background: #78958a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.dance-navigation button:hover:not(:disabled) {
+  border-color: #617e73;
+  background: #617e73;
+}
+
+.dance-navigation button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Адаптивність навігації */
+@media (max-width: 650px) {
+  .dance-navigation {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dance-navigation button {
+    flex: 1;
+  }
+
+  .dance-navigation span {
+    flex-basis: 100%;
+    order: -1;
+  }
+}
+
+/* Адаптивність */
+@media (max-width: 650px) {
+  .round-control {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .round-control > label {
+    width: 100%;
+  }
+
+  .round-control select,
+  .round-control > label:first-child select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .round-settings {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .round-settings > label {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .round-settings input[type='number'] {
+    width: 100%;
+  }
+
+  .round-settings button {
+    width: 100%;
+  }
+}
+
+

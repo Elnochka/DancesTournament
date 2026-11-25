@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 035
+      author: olena
+      changes:
+        - createTable:
+            tableName: trainer_club_history
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: club_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_date
+                  type: DATE
+                  defaultValueComputed: "CURRENT_DATE"
+              - column:
+                  name: end_date
+                  type: DATE
+        - addForeignKeyConstraint:
+            baseTableName: trainer_club_history
+            baseColumnNames: club_id
+            referencedTableName: clubs
+            referencedColumnNames: id
+            constraintName: fk_pth_club
+        - addForeignKeyConstraint:
+            baseTableName: trainer_club_history
+            baseColumnNames: trainer_id
+            referencedTableName: trainers
+            referencedColumnNames: id
+            constraintName: fk_pth_trainer
+      rollback:
+        - dropTable:
+            tableName: trainer_club_history

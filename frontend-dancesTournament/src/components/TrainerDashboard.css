@@ -1,0 +1,52 @@
+
+.trainer-dashboard {
+    padding: 20px;
+}
+
+.trainer-dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.trainer-dashboard-header h1 {
+    margin: 0 0 5px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.trainer-dashboard-header p {
+    margin: 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.trainer-logout-button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #e8e4ea;
+    color: #4b4650;
+    font-size: 14px;
+}
+
+.trainer-logout-button:hover {
+    background: #ddd8e1;
+}
+
+.trainer-section {
+    margin-bottom: 40px;
+}
+
+.trainer-section h2 {
+    margin: 0 0 15px;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.trainer-dashboard-loading {
+    padding: 30px;
+    font-size: 16px;
+}

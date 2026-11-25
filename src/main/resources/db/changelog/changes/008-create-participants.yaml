@@ -1,0 +1,86 @@
+databaseChangeLog:
+  - changeSet:
+      id: 008
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: participants
+      changes:
+        - createTable:
+            tableName: participants
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: firstname_ukr
+                  type: VARCHAR(100)
+              - column:
+                  name: lastname_ukr
+                  type: VARCHAR(100)
+              - column:
+                  name: country_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: kind_of_dance_id
+                  type: BIGINT
+              - column:
+                  name: date_birth
+                  type: DATE
+              - column:
+                  name: trainer_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gender
+                  type: VARCHAR(10)
+              - column:
+                  name: firstname_en
+                  type: VARCHAR(100)
+              - column:
+                  name: lastname_en
+                  type: VARCHAR(100)
+              - column:
+                  name: klass_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_trainer
+                  type: DATE
+        - addForeignKeyConstraint:
+            baseTableName: participants
+            baseColumnNames: trainer_id
+            referencedTableName: trainers
+            referencedColumnNames: id
+            constraintName: fk_participants_trainers
+        - addForeignKeyConstraint:
+            baseTableName: participants
+            baseColumnNames: klass_id
+            referencedTableName: klasses
+            referencedColumnNames: id
+            constraintName: fk_participants_klasses
+        - addForeignKeyConstraint:
+            baseTableName: participants
+            baseColumnNames: kind_of_dance_id
+            referencedTableName: kind_of_dances
+            referencedColumnNames: id
+            constraintName: fk_participants_kind_of_dances
+        - addForeignKeyConstraint:
+            baseTableName: participants
+            baseColumnNames: country_id
+            referencedTableName: countries
+            referencedColumnNames: id
+            constraintName: fk_participants_countries
+      rollback:
+        - delete:
+            tableName: participants

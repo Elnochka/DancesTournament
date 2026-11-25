@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 017
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: roles
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: role
+                  type: VARCHAR(100)
+      rollback:
+        - delete:
+            tableName: roles

@@ -1,0 +1,9 @@
+databaseChangeLog:
+- changeSet:
+    id: allow-null-dance-id
+    author: olena
+    changes:
+      - dropNotNullConstraint:
+          tableName: final_mark
+          columnName: dance_id
+          columnDataType: BIGINT

@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - changeSet:
+      id: 025
+      author: olena
+      changes:
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Cha-Cha-Cha"}
+              - column: { name: full_name_dance, value: "Cha-Cha-Cha" }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Samba" }
+              - column: { name: full_name_dance, value: "Samba" }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Rumba" }
+              - column: { name: full_name_dance, value: "Rumba" }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Paso Doble" }
+              - column: { name: full_name_dance, value: "Paso Doble" }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Jive" }
+              - column: { name: full_name_dance, value: "Jive" }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Waltz" }
+              - column: { name: full_name_dance, value: "Waltz" }
+              - column: { name: kind_of_dance_id, valueNumeric: 2 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Tango" }
+              - column: { name: full_name_dance, value: "Tango" }
+              - column: { name: kind_of_dance_id, valueNumeric: 2 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Viennese Waltz" }
+              - column: { name: full_name_dance, value: "Viennese Waltz" }
+              - column: { name: kind_of_dance_id, valueNumeric: 2 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Slow Foxtrot" }
+              - column: { name: full_name_dance, value: "Slow Foxtrot" }
+              - column: { name: kind_of_dance_id, valueNumeric: 2 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Quickstep" }
+              - column: { name: full_name_dance, value: "Quickstep" }
+              - column: { name: kind_of_dance_id, valueNumeric: 2 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Zouk" }
+              - column: { name: full_name_dance, value: "Zouk" }
+              - column: { name: kind_of_dance_id, valueNumeric: 3 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Kizomba" }
+              - column: { name: full_name_dance, value: "Kizomba" }
+              - column: { name: kind_of_dance_id, valueNumeric: 3 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Salsa" }
+              - column: { name: full_name_dance, value: "Salsa" }
+              - column: { name: kind_of_dance_id, valueNumeric: 3 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "Bachata" }
+              - column: { name: full_name_dance, value: "Bachata" }
+              - column: { name: kind_of_dance_id, valueNumeric: 3 }
+        - insert:
+            tableName: dances
+            columns:
+              - column: { name: name_dance, value: "West Cost" }
+              - column: { name: full_name_dance, value: "West Cost" }
+              - column: { name: kind_of_dance_id, valueNumeric: 3 }

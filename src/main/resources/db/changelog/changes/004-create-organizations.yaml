@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 004
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: organizations
+      changes:
+        - createTable:
+            tableName: organizations
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_organization
+                  type: VARCHAR(255)
+      rollback:
+        - delete:
+            tableName: organizations

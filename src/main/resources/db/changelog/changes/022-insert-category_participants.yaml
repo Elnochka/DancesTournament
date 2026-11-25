@@ -1,0 +1,90 @@
+databaseChangeLog:
+  - changeSet:
+      id: 022
+      author: olena
+      changes:
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Baby" }
+              - column: { name: age, valueNumeric: 4 }
+              - column: { name: ageon, valueNumeric: 5 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Mini" }
+              - column: { name: age, valueNumeric: 6 }
+              - column: { name: ageon, valueNumeric: 7 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Children I" }
+              - column: { name: age, valueNumeric: 8 }
+              - column: { name: ageon, valueNumeric: 9 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Children II" }
+              - column: { name: age, valueNumeric: 10 }
+              - column: { name: ageon, valueNumeric: 11 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Juvenile I"}
+              - column: {name: age, valueNumeric: 10}
+              - column: {name: ageon, valueNumeric: 11}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Juvenile II"}
+              - column: {name: age, valueNumeric: 12}
+              - column: {name: ageon, valueNumeric: 13}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Junior I"}
+              - column: {name: age, valueNumeric: 12}
+              - column: {name: ageon, valueNumeric: 13}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Junior II"}
+              - column: {name: age, valueNumeric: 14}
+              - column: {name: ageon, valueNumeric: 15}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Youth"}
+              - column: {name: age, valueNumeric: 16}
+              - column: {name: ageon, valueNumeric: 18}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Adult"}
+              - column: {name: age, valueNumeric: 19}
+              - column: {name: ageon, valueNumeric: 34}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: {name: name_category, value: "Senior I"}
+              - column: {name: age, valueNumeric: 35}
+              - column: {name: ageon, valueNumeric: 44}
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Senior II" }
+              - column: { name: age, valueNumeric: 45 }
+              - column: { name: ageon, valueNumeric: 54 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Senior III" }
+              - column: { name: age, valueNumeric: 55 }
+              - column: { name: ageon, valueNumeric: 64 }
+        - insert:
+            tableName: category_participants
+            columns:
+              - column: { name: name_category, value: "Senior IV" }
+              - column: { name: age, valueNumeric: 65 }
+              - column: { name: ageon, valueNumeric: 99 }
+

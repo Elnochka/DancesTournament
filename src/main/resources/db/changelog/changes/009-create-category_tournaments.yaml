@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 009
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: category_tournaments
+      changes:
+        - createTable:
+            tableName: category_tournaments
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name_category
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: solo_couple
+                  type: VARCHAR(50)
+              - column:
+                  name: klass_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: category_participant_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: kind_of_dance_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: date_tournament_ct
+                  type: DATE
+        - addForeignKeyConstraint:
+            baseTableName: category_tournaments
+            baseColumnNames: klass_id
+            referencedTableName: klasses
+            referencedColumnNames: id
+            constraintName: fk_category_tournaments_klass
+        - addForeignKeyConstraint:
+            baseTableName: category_tournaments
+            baseColumnNames: category_participant_id
+            referencedTableName: category_participants
+            referencedColumnNames: id
+            constraintName: fk_category_tournaments_category_participant
+        - addForeignKeyConstraint:
+            baseTableName: category_tournaments
+            baseColumnNames: kind_of_dance_id
+            referencedTableName: kind_of_dances
+            referencedColumnNames: id
+            constraintName: fk_category_tournaments_kind_of_dances
+      rollback:
+        - delete:
+            tableName: category_tournaments

@@ -1,0 +1,76 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-skating-results-table
+      author: olena
+      changes:
+        - createTable:
+            tableName: skating_results
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: participant_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: category_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: final_place
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+
+              - column:
+                  name: rule_used
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    # e.g.
+                    # "majority", "rule12", "rule15", "head_to_head"
+
+        # Foreign keys
+        - addForeignKeyConstraint:
+            baseTableName: skating_results
+            baseColumnNames: participant_id
+            constraintName: fk_skating_results_participant
+            referencedTableName: participant_tournaments
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: skating_results
+            baseColumnNames: category_id
+            constraintName: fk_skating_results_category
+            referencedTableName: category_tournaments
+            referencedColumnNames: id
+
+        # Indexes
+        - createIndex:
+            indexName: idx_skating_results_category
+            tableName: skating_results
+            columns:
+              - column:
+                  name: category_id
+
+        - createIndex:
+            indexName: idx_skating_results_participant_tournament
+            tableName: skating_results
+            columns:
+              - column:
+                  name: participant_id

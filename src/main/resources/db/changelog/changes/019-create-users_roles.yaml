@@ -1,0 +1,46 @@
+databaseChangeLog:
+  - changeSet:
+      id: 019
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: users_roles
+      changes:
+        - createTable:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: id_user
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: id_role
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+        - addPrimaryKey:
+            tableName: users_roles
+            columnNames: id_user, id_role
+            constraintName: pk_users_roles
+
+        - addForeignKeyConstraint:
+            baseTableName: users_roles
+            baseColumnNames: id_user
+            referencedTableName: users
+            referencedColumnNames: id_user
+            constraintName: fk_users_roles_users
+
+        - addForeignKeyConstraint:
+            baseTableName: users_roles
+            baseColumnNames: id_role
+            referencedTableName: roles
+            referencedColumnNames: id_role
+            constraintName: fk_users_roles_roles
+      rollback:
+        - delete:
+            tableName: users_roles

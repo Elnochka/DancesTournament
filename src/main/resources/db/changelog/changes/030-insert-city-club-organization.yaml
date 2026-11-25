@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 030
+      author: olena
+      changes:
+        - insert:
+            tableName: organizations
+            columns:
+              - column: { name: name_organization, value: "Default"}
+        - insert:
+            tableName: clubs
+            columns:
+              - column: { name: name_club, value: "Default" }
+        - insert:
+            tableName: cities
+            columns:
+              - column: { name: name_city, value: "Default" }
+        - insert:
+            tableName: countries
+            columns:
+              - column: { name: name_country, value: "Default" }

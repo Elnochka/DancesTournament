@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 020
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: countries
+      changes:
+        - createTable:
+            tableName: countries
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name_country
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+      rollback:
+        - delete:
+            tableName: countries

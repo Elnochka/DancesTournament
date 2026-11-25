@@ -1,0 +1,85 @@
+databaseChangeLog:
+  - changeSet:
+      id: 016
+      author: olena
+      changes:
+        - createTable:
+            tableName: participant_tournaments
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: start_number
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: participant_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: category_tournament_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: couple_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+              - column:
+                  name: solo_couple
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+              - column:
+                  name: date_participant
+                  type: DATE
+                  constraints:
+                    nullable: true
+
+        # FK participant
+        - addForeignKeyConstraint:
+            baseTableName: participant_tournaments
+            baseColumnNames: participant_id
+            referencedTableName: participants
+            referencedColumnNames: id
+            constraintName: fk_pt_participant
+
+        # FK category
+        - addForeignKeyConstraint:
+            baseTableName: participant_tournaments
+            baseColumnNames: category_tournament_id
+            referencedTableName: category_tournaments
+            referencedColumnNames: id
+            constraintName: fk_pt_category
+
+        # FK couple (nullable)
+        - addForeignKeyConstraint:
+            baseTableName: participant_tournaments
+            baseColumnNames: couple_id
+            referencedTableName: couples
+            referencedColumnNames: id
+            constraintName: fk_pt_couple
+
+        # унікальний стартовий номер у категорії
+        - addUniqueConstraint:
+            tableName: participant_tournaments
+            columnNames: category_tournament_id, start_number
+            constraintName: uq_category_start_number
+
+      rollback:
+        - delete:
+            tableName: participant_tournaments

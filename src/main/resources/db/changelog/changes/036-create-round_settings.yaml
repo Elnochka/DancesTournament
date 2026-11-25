@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: 036
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: round_settings
+      changes:
+        - createTable:
+            tableName: round_settings
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: category_tournament_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: round
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: round_order
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: couples_to_next_round
+                  type: INT
+
+
+        - addForeignKeyConstraint:
+            baseTableName: round_settings
+            baseColumnNames: category_tournament_id
+            referencedTableName: category_tournaments
+            referencedColumnNames: id
+            constraintName: fk_round_settings_category_tournaments
+
+        - addUniqueConstraint:
+            tableName: round_settings
+            columnNames: category_tournament_id, round
+            constraintName: uk_round_settings_category_round
+      rollback:
+        - delete:
+            tableName: round_settings

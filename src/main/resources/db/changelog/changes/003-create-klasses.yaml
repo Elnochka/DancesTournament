@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: klasses
+      changes:
+        - createTable:
+            tableName: klasses
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_klass
+                  type: VARCHAR(255)
+      rollback:
+        - delete:
+            tableName: klasses

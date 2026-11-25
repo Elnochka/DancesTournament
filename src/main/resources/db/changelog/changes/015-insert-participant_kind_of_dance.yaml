@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: 015
+      author: olena
+      changes:
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 1 }
+              - column: { name: kind_of_dance_id, value: 1 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 1 }
+              - column: { name: kind_of_dance_id, value: 2 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 2 }
+              - column: { name: kind_of_dance_id, value: 1 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 3 }
+              - column: { name: kind_of_dance_id, value: 3 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 4 }
+              - column: { name: kind_of_dance_id, value: 2 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 5 }
+              - column: { name: kind_of_dance_id, value: 3 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 5 }
+              - column: { name: kind_of_dance_id, value: 1 }
+
+        - insert:
+            tableName: participant_kind_of_dance
+            columns:
+              - column: { name: participant_id, value: 6 }
+              - column: { name: kind_of_dance_id, value: 2 }

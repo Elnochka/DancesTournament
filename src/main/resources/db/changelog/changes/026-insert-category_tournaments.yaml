@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 031
+      author: olena
+      changes:
+        - insert:
+            tableName: category_tournaments
+            columns:
+              - column: { name: name_category, value: "k3c9solo"}
+              - column: { name: category_participant_id, valueNumeric: 9}
+              - column: { name: klass_id, valueNumeric: 3}
+              - column: { name: kind_of_dance_id, valueNumeric: 1}
+              - column: { name: solo_couple, value: "SOLO" }
+        - insert:
+            tableName: category_tournaments
+            columns:
+              - column: { name: name_category, value: "k3c9COUPLE" }
+              - column: { name: category_participant_id, valueNumeric: 9 }
+              - column: { name: klass_id, valueNumeric: 3 }
+              - column: { name: kind_of_dance_id, valueNumeric: 2}
+              - column: { name: solo_couple, value: "COUPLE" }

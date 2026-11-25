@@ -1,0 +1,31 @@
+server:
+  port: 8088
+
+jwt:
+  secret: 12345678901234567890123456789012
+
+spring:
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dance_tournament
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+
+logging:
+  file.name: logs/tournament.log
+  level:
+    root: INFO
+    com.dances: INFO
+    com.dances.service: DEBUG

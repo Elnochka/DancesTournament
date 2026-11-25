@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: category_judges
+      changes:
+        - createTable:
+            tableName: category_judges
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name_category
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+      rollback:
+        - delete:
+            tableName: category_judges

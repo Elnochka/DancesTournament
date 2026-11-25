@@ -1,0 +1,17 @@
+
+
+jwt:
+  secret: "test-secret-key-for-jwt-testing-256-bits-minimum"
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+logging:
+  level:
+    com.dances: DEBUG

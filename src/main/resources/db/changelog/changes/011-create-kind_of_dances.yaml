@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 011
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: kind_of_dances
+      changes:
+        - createTable:
+            tableName: kind_of_dances
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_kind_of_dance
+                  type: VARCHAR(255)
+              - column:
+                  name: full_name_kind_of_dance
+                  type: VARCHAR(255)
+      rollback:
+        - delete:
+            tableName: kind_of_dances

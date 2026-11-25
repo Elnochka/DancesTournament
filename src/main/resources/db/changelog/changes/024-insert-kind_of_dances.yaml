@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 024
+      author: olena
+      changes:
+        - insert:
+            tableName: kind_of_dances
+            columns:
+              - column: { name: name_kind_of_dance, value: "Latina"}
+              - column: { name: full_name_kind_of_dance, value: "Latina" }
+        - insert:
+            tableName: kind_of_dances
+            columns:
+              - column: { name: name_kind_of_dance, value: "Standard" }
+              - column: { name: full_name_kind_of_dance, value: "Standard" }
+        - insert:
+            tableName: kind_of_dances
+            columns:
+              - column: { name: name_kind_of_dance, value: "Social Dance" }
+              - column: { name: full_name_kind_of_dance, value: "Social Dance" }

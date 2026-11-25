@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: 010
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: couples
+      changes:
+        - createTable:
+            tableName: couples
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name_couple
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_tournament_p
+                  type: DATE
+              - column:
+                  name: participant_f_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: participant_m_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_participant_m
+                  type: DATE
+              - column:
+                  name: date_participant_f
+                  type: DATE
+#        - addForeignKeyConstraint:
+#            baseTableName: couples
+#            baseColumnNames: category_tournament_id
+#            referencedTableName: category_tournaments
+#            referencedColumnNames: id
+#            constraintName: fk_couples_category_tournaments
+        - addForeignKeyConstraint:
+            baseTableName: couples
+            baseColumnNames: participant_f_id
+            referencedTableName: participants
+            referencedColumnNames: id
+            constraintName: fk_couples_participant_f
+        - addForeignKeyConstraint:
+            baseTableName: couples
+            baseColumnNames: participant_m_id
+            referencedTableName: participants
+            referencedColumnNames: id
+            constraintName: fk_couples_participant_m
+      rollback:
+        - delete:
+            tableName: couples

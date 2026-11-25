@@ -1,0 +1,241 @@
+databaseChangeLog:
+  - changeSet:
+      id: 031
+      author: olena
+      changes:
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer1"}
+              - column: { name: club_id, valueNumeric: 1}
+              - column: { name: category_judge_id, valueNumeric: 2}
+              - column: { name: organization_id, valueNumeric: 1}
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer2" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 2 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer3" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 1 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer4" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 2 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer5" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 1 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer6" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 2 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer7" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 3 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: trainers
+            columns:
+              - column: { name: name_trainer, value: "trainer8" }
+              - column: { name: club_id, valueNumeric: 1 }
+              - column: { name: category_judge_id, valueNumeric: 2 }
+              - column: { name: organization_id, valueNumeric: 1 }
+              - column: { name: city_id, valueNumeric: 1 }
+              - column: { name: country_id, valueNumeric: 1 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j1" }
+              - column: { name: trainer_id, valueNumeric: 1 }
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j2" }
+              - column: { name: trainer_id, valueNumeric: 2 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j3" }
+              - column: { name: trainer_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j4" }
+              - column: { name: trainer_id, valueNumeric: 4 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j5" }
+              - column: { name: trainer_id, valueNumeric: 5 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j6" }
+              - column: { name: trainer_id, valueNumeric: 6 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j7" }
+              - column: { name: trainer_id, valueNumeric: 7 }
+
+        - insert:
+            tableName: judges
+            columns:
+              - column: { name: name_judge, value: "j8" }
+              - column: { name: trainer_id, valueNumeric: 8 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "petro" }
+              - column: { name: lastname_ukr, value: "petro" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "2000-10-10" }
+              - column: { name: trainer_id, valueNumeric: 1 }
+              - column: { name: gender, value: "MALE" }
+              - column: { name: firstname_en, value: "petro" }
+              - column: { name: lastname_en, value: "petro" }
+              - column: { name: klass_id, valueNumeric: 3 }
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Olena" }
+              - column: { name: lastname_ukr, value: "Bondar" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "2001-05-10" }
+              - column: { name: trainer_id, valueNumeric: 2 }
+              - column: { name: gender, value: "FEMALE" }
+              - column: { name: firstname_en, value: "Olena" }
+              - column: { name: lastname_en, value: "Bondar" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Ihor" }
+              - column: { name: lastname_ukr, value: "Sydorenko" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "1999-03-15" }
+              - column: { name: trainer_id, valueNumeric: 3 }
+              - column: { name: gender, value: "MALE" }
+              - column: { name: firstname_en, value: "Ihor" }
+              - column: { name: lastname_en, value: "Sydorenko" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Kateryna" }
+              - column: { name: lastname_ukr, value: "Shevchenko" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "2002-12-11" }
+              - column: { name: trainer_id, valueNumeric: 4 }
+              - column: { name: gender, value: "FEMALE" }
+              - column: { name: firstname_en, value: "Kateryna" }
+              - column: { name: lastname_en, value: "Shevchenko" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Roman" }
+              - column: { name: lastname_ukr, value: "Marchenko" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "1998-07-21" }
+              - column: { name: trainer_id, valueNumeric: 5 }
+              - column: { name: gender, value: "MALE" }
+              - column: { name: firstname_en, value: "Roman" }
+              - column: { name: lastname_en, value: "Marchenko" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Nadiya" }
+              - column: { name: lastname_ukr, value: "Melnyk" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "2003-04-25" }
+              - column: { name: trainer_id, valueNumeric: 6 }
+              - column: { name: gender, value: "FEMALE" }
+              - column: { name: firstname_en, value: "Nadiya" }
+              - column: { name: lastname_en, value: "Melnyk" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Dmytro" }
+              - column: { name: lastname_ukr, value: "Taran" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "1997-09-09" }
+              - column: { name: trainer_id, valueNumeric: 7 }
+              - column: { name: gender, value: "MALE" }
+              - column: { name: firstname_en, value: "Dmytro" }
+              - column: { name: lastname_en, value: "Taran" }
+              - column: { name: klass_id, valueNumeric: 3 }
+
+        - insert:
+            tableName: participants
+            columns:
+              - column: { name: firstname_ukr, value: "Sofia" }
+              - column: { name: lastname_ukr, value: "Rudenko" }
+              - column: { name: country_id, valueNumeric: 1 }
+              - column: { name: kind_of_dance_id, valueNumeric: 1 }
+              - column: { name: date_birth, valueDate: "2004-11-30" }
+              - column: { name: trainer_id, valueNumeric: 8 }
+              - column: { name: gender, value: "FEMALE" }
+              - column: { name: firstname_en, value: "Sofia" }
+              - column: { name: lastname_en, value: "Rudenko" }
+              - column: { name: klass_id, valueNumeric: 3 }

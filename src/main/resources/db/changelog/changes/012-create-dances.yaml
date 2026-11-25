@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 012
+      author: olena
+      preConditions:
+        - onFail: MARK_RAN
+        - not:
+            - or:
+                - tableExists:
+                    tableName: dances
+      changes:
+        - createTable:
+            tableName: dances
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name_dance
+                  type: VARCHAR(255)
+              - column:
+                  name: full_name_dance
+                  type: VARCHAR(255)
+              - column:
+                  name: kind_of_dance_id
+                  type: BIGINT
+        - addForeignKeyConstraint:
+            baseTableName: dances
+            baseColumnNames: kind_of_dance_id
+            referencedTableName: kind_of_dances
+            referencedColumnNames: id
+            constraintName: fk_dances_kind_of_dances
+      rollback:
+        - delete:
+            tableName: dances

@@ -1,0 +1,121 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-mark-table
+      author: olena
+      changes:
+        - createTable:
+            tableName: mark
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+
+              - column:
+                  name: participant_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: category_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: judge_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: dance_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: round
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: is_passed
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_locked
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+
+        # Foreign keys
+        - addForeignKeyConstraint:
+            baseTableName: mark
+            baseColumnNames: participant_id
+            constraintName: fk_mark_participant_tournament
+            referencedTableName: participant_tournaments
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: mark
+            baseColumnNames: category_id
+            constraintName: fk_mark_category
+            referencedTableName: category_tournaments
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: mark
+            baseColumnNames: judge_id
+            constraintName: fk_mark_judge
+            referencedTableName: judges
+            referencedColumnNames: id
+
+        - addForeignKeyConstraint:
+            baseTableName: mark
+            baseColumnNames: dance_id
+            constraintName: fk_mark_dance
+            referencedTableName: dances
+            referencedColumnNames: id
+
+        # Indexes
+        - createIndex:
+            indexName: idx_mark_category_round
+            tableName: mark
+            columns:
+              - column:
+                  name: category_id
+              - column:
+                  name: round
+
+        - createIndex:
+            indexName: idx_mark_participant_tournament
+            tableName: mark
+            columns:
+              - column:
+                  name: participant_id
+
+        - createIndex:
+            indexName: idx_mark_judge
+            tableName: mark
+            columns:
+              - column:
+                  name: judge_id
+
+        - createIndex:
+            indexName: idx_mark_dance
+            tableName: mark
+            columns:
+              - column:
+                  name: dance_id

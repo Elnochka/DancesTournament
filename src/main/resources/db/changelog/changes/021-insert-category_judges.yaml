@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 021
+      author: olena
+      changes:
+        - - insert:
+              tableName: category_judges
+              columns:
+                - column: { name: name_category, value: "D" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: {name: name_category, value: "C"}
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: {name: name_category, value: "B"}
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: {name: name_category, value: "A"}
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "MK" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "Національний суддя" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "Головний суддя" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: {name: name_category, value: "WDSF Adjudicator B"}
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "WDSF Adjudicator A" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "WDSF National Judge" }
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: {name: name_category, value: "WDSF International Open Judge"}
+        - insert:
+            tableName: category_judges
+            columns:
+              - column: { name: name_category, value: "WDSF PD Adjudicator" }
